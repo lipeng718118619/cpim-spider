@@ -7,14 +7,15 @@
 
 
 from scrapy import signals
+from scrapy.utils.project import get_project_settings
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 import random
 from scrapy.downloadermiddlewares.httpproxy import HttpProxyMiddleware
 import base64
 
-from cpimspider.settings import PROXY_SERVER
-from cpimspider.settings import PROXY_USER
-from cpimspider.settings import PROXY_PASS
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class CpimspiderSpiderMiddleware(object):
@@ -131,6 +132,11 @@ class CpimUserAgentMiddleware(UserAgentMiddleware):
         request.headers['User-Agent'] = agent
 
 
+settings = get_project_settings()
+PROXY_USER = settings.get("PROXY_USER")
+PROXY_PASS = settings.get("PROXY_PASS")
+PROXY_SERVER = settings.get("PROXY_SERVER")
+
 # for Python3
 proxyAuth = "Basic " + base64.urlsafe_b64encode(bytes((PROXY_USER + ":" + PROXY_PASS), "ascii")).decode("utf8")
 
@@ -138,11 +144,12 @@ proxyAuth = "Basic " + base64.urlsafe_b64encode(bytes((PROXY_USER + ":" + PROXY_
 class RandomHttpProxyMiddleware(HttpProxyMiddleware):
 
     def process_request(self, request, spider):
+        # 使用代理的URL
         if request.url.startswith("https://www.qichamao.com/orgcompany/searchitemdtl"):
-
             request.meta["proxy"] = PROXY_SERVER
 
             request.headers["Proxy-Authorization"] = proxyAuth
 
-        else:
-            print("url : %s" % request.url)
+        # 其他不使用代理
+
+        logger.info("download  url : %s" % request.url)
