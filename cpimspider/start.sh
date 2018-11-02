@@ -10,7 +10,7 @@ CRONTAB_TASK="*/30 * * * * ${TASK_COMMAND}"
 CRONTAB_BAK_FILE="${CUR_PATH}/crontab_bak"
 
 # 创建crontab任务函数
-function create_crontab()
+create_cron()
 {
     echo 'Create crontab task...'
     crontab -l > ${CRONTAB_BAK_FILE} 2>/dev/null
@@ -22,7 +22,7 @@ function create_crontab()
 }
 
 # 清除crontab任务函数
-function clear_crontab(){
+clear_cron(){
     echo 'Delete crontab task...'
     crontab -l > ${CRONTAB_BAK_FILE} 2>/dev/null
     sed -i "/.*${SCRIPT_NAME}/d" ${CRONTAB_BAK_FILE}
@@ -38,9 +38,9 @@ fi
 
 case $1 in
     'start' )
-        create_crontab
+        create_cron
         ;;
     'stop' )
-        clear_crontab
+        clear_cron
         ;;
 esac
