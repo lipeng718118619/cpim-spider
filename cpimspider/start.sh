@@ -3,9 +3,10 @@
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
 
 # 要定时执行的任务
-TASK_COMMAND="scrapy crawl cpim-spider -s JOBDIR=crawls/cpim-spider"
+
+TASK_COMMAND="cd /home/honddy/code/cpim-spider ;/usr/local/bin/scrapy crawl cpim-spider -s JOBDIR=crawls/cpim-spider > /home/honddy/code/cpim-spider/cpimspider/error.log 2>&1"
 # 要添加的crontab任务
-CRONTAB_TASK="*/30 * * * * ${TASK_COMMAND}"
+CRONTAB_TASK="*/1 * * * * ${TASK_COMMAND}"
 # 备份原始crontab记录文件
 CRONTAB_BAK_FILE="${CUR_PATH}/crontab_bak"
 
@@ -14,7 +15,7 @@ create_cron()
 {
     echo 'Create crontab task...'
     crontab -l > ${CRONTAB_BAK_FILE} 2>/dev/null
-    sed -i "/.*${TASK_COMMAND}/d" ${CRONTAB_BAK_FILE}  # 已存在任务时会被sed删除，防止重复添加
+    sed -i "/.*cpim-spider.*/d" ${CRONTAB_BAK_FILE}  # 已存在任务时会被sed删除，防止重复添加
     echo "${CRONTAB_TASK}" >> ${CRONTAB_BAK_FILE}
     crontab ${CRONTAB_BAK_FILE}
 
