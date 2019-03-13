@@ -8,7 +8,7 @@
 import scrapy
 
 
-class CpimBaseInfo(scrapy.Item):
+class CpimspiderItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     # id
@@ -64,8 +64,19 @@ class CpimBaseInfo(scrapy.Item):
     # 可信度
     confidence = scrapy.Field()
 
+    # 企业电话
+    crop_telephone = scrapy.Field()
 
-class CpimspiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    # 企业邮箱
+    crop_email = scrapy.Field()
+
+    # 查询企业联系方式的 代码 code
+    crop_data_code = scrapy.Field()
+
+    # 用于查询企业联系方式的cookie
+    cookie = scrapy.Field()
+
+    # 联系方式
+    contacts = scrapy.Field()
+    # 写入时间
+    insert_time = scrapy.Field()

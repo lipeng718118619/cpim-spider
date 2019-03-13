@@ -1,40 +1,113 @@
 # -*- coding: utf-8 -*-
+import base64
+import os
+import time
+import urllib
+
+from PIL import Image
 from scrapy.exceptions import IgnoreRequest
 from scrapy.http import Request, FormRequest
-
+import socket
 import logging
 
 from json import loads
-from scrapy_redis.spiders import RedisSpider
 
-from ..items import CpimBaseInfo
+from scrapy_redis.spiders import RedisSpider
+from selenium import webdriver
+
+from ..items import CpimspiderItem
 
 import uuid
-
 logger = logging.getLogger(__name__)
+
+verification_code_server_host = '10.211.55.6'
+verification_code_server_port = 80
+
+COOKIE_JAR = 'cookiejar'
+
+
+def verification_code_check(img_content):
+    """
+    验证码识别
+    :param img_content:
+    :return:
+    """
+    content = base64.b64encode(img_content).decode()
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((verification_code_server_host, verification_code_server_port))
+    data = urllib.parse.quote_plus(content).encode()
+    s.sendall(data)
+    dat = s.recv(1024)
+    s.close()
+    return dat.decode()
+
+
+def verification_code_identification(verify_url):
+    """
+    用于跳过企查猫验证码
+    :param verify_url:
+    :return:
+    """
+    driver = None
+    try:
+        logger.info("verify_code_url : " + verify_url)
+        options = webdriver.ChromeOptions()
+        options.headless = True  # 设置启动无界面化
+        options.add_argument('window-size=1920,1080')
+        driver = webdriver.Chrome(options=options)  # 启动时添加定制的选项
+
+        driver.get(verify_url)
+        time.sleep(3)
+
+        timestamp = str(round(time.time() * 1000))
+        code_image_filename = timestamp + ".png"
+        driver.find_element_by_class_name("code-img").screenshot(code_image_filename)
+        # 调整图片大小
+        image = Image.open(code_image_filename)
+        resize_image = image.resize((80, 35), Image.ANTIALIAS)
+        resize_image.save(code_image_filename)
+
+        with open(code_image_filename, 'rb') as f:
+            code_image_bytes = f.read()
+
+        os.remove(code_image_filename)
+        code = verification_code_check(code_image_bytes)
+
+        driver.find_element_by_id("verifycode").send_keys(code)
+
+        driver.find_element_by_class_name("btnverify").click()
+        time.sleep(2)
+
+        if driver.title != '用户验证-企查猫(企业查询宝)':
+            return True
+        return False
+    except Exception as e:
+        logger.error(repr(e))
+    finally:
+        if not driver is None:
+            driver.close()
+            driver.quit()
 
 
 class CpimSpider(RedisSpider):
     name = "cpim-spider"
 
     start_urls = ['https://www.qichamao.com/search/all/~?o=2']
-
-    # start_urls = ['https://www.qichamao.com/search/all?o=2&p=9']
-
     login_url = 'https://www.qichamao.com/usercenter/dologin'
 
     login_heads = {'Host': 'www.qichamao.com',
                    'Referer': 'https://www.qichamao.com',
-                   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36'}
+                   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 '
+                                 '(KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36'}
 
-    login_form_data = {'userId': '13165786609', 'password': 'Pengge757!?*'}
+    login_form_data = {'userId': '17162188447', 'password': 'aa162760'}
 
     allowed_domains = ['www.qichamao.com']
 
     host = 'https://www.qichamao.com'
 
     def start_requests(self):
-        yield Request(self.start_urls[0], meta={'cookiejar': 1}, callback=self.check_login, dont_filter=True)
+        yield Request(self.start_urls[0], meta={COOKIE_JAR: 1}, callback=self.check_login, dont_filter=True)
 
     # 校验是否需要登录
     def check_login(self, response):
@@ -46,23 +119,17 @@ class CpimSpider(RedisSpider):
         if is_login is False:
             img_url = self.host + response.css('.code-img').attrib['src']
 
-            yield FormRequest(img_url, meta={"cookiejar": response.meta["cookiejar"]}, callback=self._login,
-                              dont_filter=True)
-
+            yield FormRequest(img_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
+                              callback=self._login, dont_filter=True)
         else:
-
-            yield FormRequest(response.url, meta={"cookiejar": response.meta["cookiejar"]}, dont_filter=True)
+            yield FormRequest(response.url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, dont_filter=True)
 
     # 登录系统
     def _login(self, response):
-
-        with open("code.gif", 'wb+') as f:
-            f.write(response.body)
-        print("input  verify code:")
-        code = input()
+        code = verification_code_check(response.body)
         self.login_form_data['VerifyCode'] = code
         self.login_form_data['sevenDays'] = 'false'
-        yield FormRequest(url=self.login_url, meta={"cookiejar": response.meta["cookiejar"]},
+        yield FormRequest(url=self.login_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
                           headers=self.login_heads, formdata=self.login_form_data,
                           callback=self._parse_login, dont_filter=True)
 
@@ -77,7 +144,7 @@ class CpimSpider(RedisSpider):
             return
         # 登录成功开始爬去信息页
         for url in self.start_urls:
-            yield Request(url=url, meta={"cookiejar": response.meta["cookiejar"]}, headers=self.login_heads,
+            yield Request(url=url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, headers=self.login_heads,
                           dont_filter=True)
 
     # 开始爬去数据
@@ -86,10 +153,10 @@ class CpimSpider(RedisSpider):
         if response.url.startswith("https://www.qichamao.com/search/all"):
             try:
                 # 非会员只能下载10页
-                islimit = response.css('article.main').xpath('string(div)').extract_first().strip()
-                if (islimit == '企查猫(企业查询宝)偷偷告诉你，开通VIP可查找10000+企业信息'):
+                is_limit = response.css('article.main').xpath('string(div)').extract_first().strip()
+                if is_limit == '企查猫(企业查询宝)偷偷告诉你，开通VIP可查找10000+企业信息':
                     for url in self.start_urls:
-                        yield Request(url=url, meta={"cookiejar": response.meta["cookiejar"]}, headers=self.login_heads,
+                        yield Request(url=url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, headers=self.login_heads,
                                       dont_filter=True)
             except Exception:
                 raise IgnoreRequest
@@ -99,16 +166,24 @@ class CpimSpider(RedisSpider):
 
             for url in urls:
                 # 二级页面入队
-                yield Request(self.host + url, callback=self.parse)
+                yield Request(self.host + url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, callback=self.parse,
+                              dont_filter=False)
+
             # 爬起下一个一级页面
-            next_url = response.css('a.next')[0].attrib['href']
-            yield Request(self.host + next_url, meta={"cookiejar": response.meta["cookiejar"]}, callback=self.parse,
+
+            if 'href' in response.css('a.next')[0].attrib:
+                next_url = response.css('a.next')[0].attrib["href"]
+            else:
+                return
+
+            yield Request(self.host + next_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, callback=self.parse,
                           dont_filter=True)
 
+        # 二级url 爬去企业信息
         elif response.url.startswith("https://www.qichamao.com/orgcompany/searchitemdtl"):
             logger.info("climb url : %s " % response.url)
 
-            base_info = CpimBaseInfo()
+            base_info = CpimspiderItem()
 
             art_basics = response.css('section.pb-d2').css('[class=art-basic]').css('li')
             # 基本数据提取
@@ -143,4 +218,69 @@ class CpimSpider(RedisSpider):
             base_info['industry'] = art_basic_swot_dict['所属行业']
             base_info['forward_looking_label'] = art_basic_swot_dict['前瞻标签']
             base_info['exhibition_label'] = art_basic_swot_dict['展会标签']
+
+            base_info['cookie'] = ""
+            base_info['crop_telephone'] = ""
+            base_info['crop_email'] = ""
+            base_info['crop_data_code'] = ""
+            base_info['contacts'] = ""
+
+            # 联系方式提取
+
+            base_info['insert_time'] = time.strftime("%Y%m%d%H%M", time.localtime())
+
+            CpimSpider.set_contact_item(response, base_info)
             yield base_info
+
+        elif response.url.startswith("https://www.qichamao.com/userCenter/UserVarify"):
+            """
+            进行验证码验证
+            """
+            count = 0
+            while count <= 5:
+                if verification_code_identification(response.url):
+
+                    url = response.url.split("ReturnUrl=")[1]
+                    logger.info(response.url.split("ReturnUrl=")[1])
+
+                    yield Request(url, callback=self.parse, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
+                                  dont_filter=True)
+                    break
+                else:
+                    count = count + 1
+
+    # 处理联系信息
+    @staticmethod
+    def set_contact_item(response, item):
+
+        try:
+            cookie = ""
+            crop_telephone = ""
+            crop_email = ""
+            data_code = ""
+            if response.request.headers.has_key('Cookie'):
+                cookie = response.request.headers.get('Cookie').decode()
+
+            # ["企业电话:139989999","企业邮箱":"88899@qq.com"]
+            arthd_info_list = [arthd_info.css('span::text').extract_first() for arthd_info in
+                               response.css('.arthd_info')]
+            if not arthd_info_list is None and isinstance(arthd_info_list, list):
+
+                for arthd_info in arthd_info_list:
+                    if "电话" in arthd_info:
+                        crop_telephone = arthd_info.split("：")[1]
+
+                    if "邮箱" in arthd_info:
+                        crop_email = arthd_info.split("：")[1]
+
+            if response.css('button[id="arthd-mophone"]'):
+                data_code = response.css('button[id="arthd-mophone"]')[0].attrib.get("data-code")
+
+            item['cookie'] = cookie
+            item['crop_telephone'] = crop_telephone
+            item['crop_email'] = crop_email
+            item['crop_data_code'] = data_code
+        except TypeError:
+            pass
+        except Exception as e:
+            logger.error("set_contact_item ignore exception : " + repr(e))

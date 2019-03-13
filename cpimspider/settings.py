@@ -12,10 +12,9 @@
 BOT_NAME = 'cpim_spider'
 
 # LOG CONFIG
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
 LOG_FILE = "/Users/honddy/PycharmProjects/log/mySpider.log"
 SPIDER_MODULES = ['cpimspider.spiders']
-NEWSPIDER_MODULE = 'cpimspider.spiders'
 
 # DataBase Config
 DB_USER = 'root'
@@ -30,19 +29,22 @@ PROXY_SERVER = "http://http-dyn.abuyun.com:9020"
 PROXY_USER = "HC2322Y33549552D"
 PROXY_PASS = "1ABA00D60D43BB94"
 
-
+# Redis 增量爬取
+REDIS_HOST = '10.211.55.3'
+REDIS_PORT = 6379
 # LBS  根据位置获取具体坐标
-LBS_URL = "http://localhost:8080/api/v1/lbs/getPositionByAddress"
+LBS_URL = "http://inte-data.chanapp.chanjet.com/api/v1/lbs/getPositionByAddress"
+
+# 企查猫获取联系人接口
+QCH_GET_CONTACT_URL = "https://www.qichamao.com/orgcompany/GetContact"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
 # Redis Config
-# Enables scheduling storing requests queue in redis.
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 # Ensure all spiders share same duplicates filter through redis.
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+DUPEFILTER_CLASS = "cpimspider.dupefilter.RFPDupeFilterOwn"
 
 # Enables scheduling storing requests queue in redis.
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
@@ -73,9 +75,11 @@ SCHEDULER_PERSIST = True
 
 # Store scraped item in redis for post-processing.
 ITEM_PIPELINES = {
-    'scrapy_redis.pipelines.RedisPipeline': 300,
+    # 'scrapy_redis.pipelines.RedisPipeline': 300,
+    'cpimspider.pipelines.RedisPipelineOwn': 300,
     'cpimspider.pipelines.LBSDataPipeline': 350,
-    'cpimspider.pipelines.SaveDataPipeline': 400
+    'cpimspider.pipelines.QCMGetCropContactPipeline': 400,
+    'cpimspider.pipelines.SaveDataPipeline': 600
 }
 
 # The item pipeline serializes and stores the items in this redis key.
@@ -86,9 +90,6 @@ ITEM_PIPELINES = {
 # REDIS_ITEMS_SERIALIZER = 'json.dumps'
 
 # Specify the host and port to use when connecting to Redis (optional).
-REDIS_HOST = '10.211.55.3'
-REDIS_PORT = 6379
-
 # Specify the full Redis URL for connecting (optional).
 # If set, this takes precedence over the REDIS_HOST and REDIS_PORT settings.
 # REDIS_URL = 'redis://user:pass@hostname:9001'
@@ -111,15 +112,15 @@ REDIS_ENCODING = 'latin1'
 
 # Ensure all spiders share same duplicates filter through redis.
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 2
+CONCURRENT_REQUESTS = 10
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 5
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
-# CONCURRENT_REQUESTS_PER_DOMAIN = 16
-CONCURRENT_REQUESTS_PER_IP = 2
+CONCURRENT_REQUESTS_PER_DOMAIN = 10
+# CONCURRENT_REQUESTS_PER_IP = 10
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
@@ -149,10 +150,11 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
-# EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-# }
-
+EXT_ENABLED = True
+IDLE_NUMBER = 120  # 配置空闲持续时间单位为 120 个 ，一个时间单位为5s
+EXTENSIONS = {
+    'cpimspider.extensions.RedisSpiderSmartIdleClosedExtensions': 500,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

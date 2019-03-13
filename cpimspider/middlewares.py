@@ -144,12 +144,13 @@ proxyAuth = "Basic " + base64.urlsafe_b64encode(bytes((PROXY_USER + ":" + PROXY_
 class RandomHttpProxyMiddleware(HttpProxyMiddleware):
 
     def process_request(self, request, spider):
-        # 使用代理的URL
-        if request.url.startswith("https://www.qichamao.com/orgcompany/searchitemdtl"):
-            request.meta["proxy"] = PROXY_SERVER
-
-            request.headers["Proxy-Authorization"] = proxyAuth
+        # # 使用代理的URL
+        # if request.url.startswith("https://www.qichamao.com/orgcompany/searchitemdtl"):
+        #     request.meta["proxy"] = PROXY_SERVER
+        #
+        #     request.headers["Proxy-Authorization"] = proxyAuth
 
         # 其他不使用代理
 
-        logger.info("download  url : %s" % request.url)
+        # logger.info("download  url : %s" % request.url)
+        pass
