@@ -12,6 +12,7 @@ import logging
 
 from json import loads
 
+from scrapy.utils.project import get_project_settings
 from scrapy_redis.spiders import RedisSpider
 from selenium import webdriver
 
@@ -19,9 +20,10 @@ from ..items import CpimspiderItem
 
 import uuid
 logger = logging.getLogger(__name__)
+settings = get_project_settings()
 
-verification_code_server_host = '10.211.55.6'
-verification_code_server_port = 80
+verification_code_server_host = settings.get("VERIFICATION_CODE_SERVER_HOST")
+verification_code_server_port = settings.get("VERIFICATION_CODE_SERVER_PORT")
 
 COOKIE_JAR = 'cookiejar'
 

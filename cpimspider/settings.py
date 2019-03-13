@@ -23,6 +23,10 @@ DB_HOST = '10.211.55.3'
 DB_PORT = 3306
 DB_NAME = 'test'
 
+# 验证码服务器
+VERIFICATION_CODE_SERVER_HOST = '10.211.55.6'
+VERIFICATION_CODE_SERVER_PORT = 80
+
 # 代理服务器
 PROXY_SERVER = "http://http-dyn.abuyun.com:9020"
 # 代理隧道验证信息
