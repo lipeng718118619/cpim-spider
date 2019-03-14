@@ -176,7 +176,7 @@ class CpimSpider(RedisSpider):
             if 'href' in response.css('a.next')[0].attrib:
                 next_url = response.css('a.next')[0].attrib["href"]
             else:
-                return
+                next_url = "/search/all/~?o=2"
 
             yield Request(self.host + next_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, callback=self.parse,
                           dont_filter=True)

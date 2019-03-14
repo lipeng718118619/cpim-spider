@@ -8,6 +8,7 @@
 #     https://doc.scrapy.org/en/latest/topics/settings.html
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
 
 BOT_NAME = 'cpim_spider'
 
@@ -46,6 +47,15 @@ QCH_GET_CONTACT_URL = "https://www.qichamao.com/orgcompany/GetContact"
 ROBOTSTXT_OBEY = False
 
 # Redis Config
+# 23小时后主动关闭爬虫
+
+now = datetime.datetime.now()
+
+end_time = datetime.datetime(now.year, now.month, now.day, 23, 0, 0)
+
+interval = end_time - now
+sec = interval.days * 24 * 3600 + interval.seconds
+CLOSESPIDER_TIMEOUT = sec
 
 # Ensure all spiders share same duplicates filter through redis.
 DUPEFILTER_CLASS = "cpimspider.dupefilter.RFPDupeFilterOwn"

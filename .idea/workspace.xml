@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bb9d39c-58ab-4a49-8344-fd298a76c474" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/cpimspider/dupefilter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cpimspider/extensions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/code.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cpimspider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/start.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +15,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cpimspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1540788959409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
-    <SUITE FILE_PATH="coverage/cpimspider$start.coverage" NAME="start Coverage Results" MODIFIED="1552467033842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
-    <SUITE FILE_PATH="coverage/cpimspider$test.coverage" NAME="test Coverage Results" MODIFIED="1552465598532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
+    <SUITE FILE_PATH="coverage/cpimspider$start.coverage" NAME="start Coverage Results" MODIFIED="1552530914200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
+    <SUITE FILE_PATH="coverage/cpimspider$test.coverage" NAME="test Coverage Results" MODIFIED="1552530067725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
     <SUITE FILE_PATH="coverage/cpimspider$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1540802644988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
     <SUITE FILE_PATH="coverage/cpimspider$cpimspider.coverage" NAME="cpimspider Coverage Results" MODIFIED="1552459123876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
   </component>
@@ -31,13 +24,13 @@
     <session id="1548076237">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
-          <entry key="project.open.time.0" value="7" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.0" value="8" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.3" value="5" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,7 +43,7 @@
           <entry key="log" value="17" />
           <entry key="md" value="2" />
           <entry key="png" value="20" />
-          <entry key="py" value="456" />
+          <entry key="py" value="468" />
           <entry key="pyi" value="1" />
           <entry key="sh" value="6" />
         </counts>
@@ -64,7 +57,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="456" />
+          <entry key="Python" value="468" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
@@ -73,7 +66,7 @@
           <entry key="dummy" value="22" />
           <entry key="html" value="9" />
           <entry key="js" value="10" />
-          <entry key="py" value="15390" />
+          <entry key="py" value="15605" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -82,7 +75,7 @@
           <entry key="HTML" value="9" />
           <entry key="JavaScript" value="10" />
           <entry key="PLAIN_TEXT" value="26" />
-          <entry key="Python" value="15373" />
+          <entry key="Python" value="15588" />
           <entry key="SQL" value="17" />
         </counts>
       </usages-collector>
@@ -90,13 +83,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cpimspider/dupefilter.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="48">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="236" column="84" selection-start-line="236" selection-start-column="74" selection-end-line="236" selection-end-column="84" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#24#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,6 +133,7 @@
       <find>cpim_spider</find>
       <find>redis_key</find>
       <find>DUPEFILTER_CLASS</find>
+      <find>verification_code_server_host</find>
     </findStrings>
     <replaceStrings>
       <replace>COOKIE_JAR</replace>
@@ -158,12 +161,12 @@
         <option value="$PROJECT_DIR$/cpimspider/spiders/ddd.js" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/ddd.html" />
         <option value="$PROJECT_DIR$/cpimspider/middlewares.py" />
-        <option value="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" />
         <option value="$PROJECT_DIR$/cpimspider/pipelines.py" />
         <option value="$PROJECT_DIR$/cpimspider/RFPDupeFilterOwn.py" />
+        <option value="$PROJECT_DIR$/cpimspider/dupefilter.py" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/test.py" />
         <option value="$PROJECT_DIR$/cpimspider/settings.py" />
-        <option value="$PROJECT_DIR$/cpimspider/dupefilter.py" />
+        <option value="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" />
       </list>
     </option>
   </component>
@@ -174,8 +177,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="34" />
+    <option name="x" value="20" />
+    <option name="y" value="23" />
     <option name="width" value="1594" />
     <option name="height" value="957" />
   </component>
@@ -370,19 +373,34 @@
       <option name="project" value="LOCAL" />
       <updated>1550467903908</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="init">
+      <created>1552467501882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552467501882</updated>
+    </task>
+    <task id="LOCAL-00006" summary="init">
+      <created>1552467795876</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552467795876</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="34" width="1594" height="957" extended-state="0" />
+    <frame x="20" y="23" width="1594" height="957" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19587629" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12371134" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34450868" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24971098" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.26473987" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.061271675" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.28208092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -425,16 +443,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cpimspider/pipelines.py</url>
-          <line>294</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cpimspider/pipelines.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cpimspider/pipelines.py</url>
           <line>60</line>
@@ -558,13 +566,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/close_spider_ext.py" />
-    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/spiders/ddd.js" />
     <entry file="file:///usr/local/lib/python3.7/site-packages/selenium/webdriver/phantomjs/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -596,13 +597,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/ddd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="948" column="14" selection-start-line="948" selection-start-column="14" selection-end-line="948" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/ddd.html" />
     <entry file="file:///usr/local/lib/python3.7/site-packages/selenium/webdriver/common/service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
@@ -621,12 +616,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code1.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/code.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code1.gif" />
+    <entry file="file://$PROJECT_DIR$/cpimspider/code.gif" />
     <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -648,19 +639,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code2.png" />
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/code1.png" />
     <entry file="file://$PROJECT_DIR$/cpimspider/extensions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#77#91#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,17 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="5366" column="22" lean-forward="true" selection-start-line="5366" selection-start-column="22" selection-end-line="5366" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236">
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#170#196#0" expanded="true" />
-            <marker date="1552451435531" expanded="true" signature="4722:4731" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -744,48 +717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="304" column="23" selection-start-line="304" selection-start-column="23" selection-end-line="304" selection-end-column="23" />
-          <folding>
-            <element signature="e#193#206#0" expanded="true" />
-            <marker date="1552463515549" expanded="true" signature="2183:2202" ph="..." />
-            <marker date="1552463515549" expanded="true" signature="8697:9328" ph="..." />
-            <marker date="1552463515549" expanded="true" signature="11610:11676" ph="..." />
-            <marker date="1552463515549" expanded="true" signature="11671:11672" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1636">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy_redis/dupefilter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-951">
           <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -803,12 +738,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/dupefilter.py">
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="72">
+          <caret line="3" selection-start-line="3" selection-end-line="8" selection-end-column="50" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4402">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#193#206#0" expanded="true" />
+            <marker date="1552463515549" expanded="true" signature="2183:2202" ph="..." />
+            <marker date="1552463515549" expanded="true" signature="8697:9328" ph="..." />
+            <marker date="1552463515549" expanded="true" signature="11610:11676" ph="..." />
+            <marker date="1552463515549" expanded="true" signature="11671:11672" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/dupefilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <element signature="e#170#196#0" expanded="true" />
+            <marker date="1552451435531" expanded="true" signature="4722:4731" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="25" lean-forward="true" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="236" column="84" selection-start-line="236" selection-start-column="74" selection-end-line="236" selection-end-column="84" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
