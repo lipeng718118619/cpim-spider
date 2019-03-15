@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cpimspider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cpimspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1540788959409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
-    <SUITE FILE_PATH="coverage/cpimspider$start.coverage" NAME="start Coverage Results" MODIFIED="1552530914200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
+    <SUITE FILE_PATH="coverage/cpimspider$start.coverage" NAME="start Coverage Results" MODIFIED="1552566072344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
     <SUITE FILE_PATH="coverage/cpimspider$test.coverage" NAME="test Coverage Results" MODIFIED="1552530067725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
     <SUITE FILE_PATH="coverage/cpimspider$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1540802644988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
     <SUITE FILE_PATH="coverage/cpimspider$cpimspider.coverage" NAME="cpimspider Coverage Results" MODIFIED="1552459123876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
@@ -43,7 +42,7 @@
           <entry key="log" value="17" />
           <entry key="md" value="2" />
           <entry key="png" value="20" />
-          <entry key="py" value="468" />
+          <entry key="py" value="486" />
           <entry key="pyi" value="1" />
           <entry key="sh" value="6" />
         </counts>
@@ -57,16 +56,16 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="468" />
+          <entry key="Python" value="486" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="22" />
+          <entry key="dummy" value="26" />
           <entry key="html" value="9" />
           <entry key="js" value="10" />
-          <entry key="py" value="15605" />
+          <entry key="py" value="15623" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -74,8 +73,8 @@
         <counts>
           <entry key="HTML" value="9" />
           <entry key="JavaScript" value="10" />
-          <entry key="PLAIN_TEXT" value="26" />
-          <entry key="Python" value="15588" />
+          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="Python" value="15606" />
           <entry key="SQL" value="17" />
         </counts>
       </usages-collector>
@@ -83,23 +82,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
+            <state relative-caret-position="215">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-92">
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
+              <folding>
+                <element signature="e#170#196#0" expanded="true" />
+                <marker date="1552451435531" expanded="true" signature="4722:4731" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpimspider/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#193#206#0" expanded="true" />
+                <marker date="1552463515549" expanded="true" signature="2183:2202" ph="..." />
+                <marker date="1552463515549" expanded="true" signature="8697:9328" ph="..." />
+                <marker date="1552463515549" expanded="true" signature="11610:11676" ph="..." />
+                <marker date="1552463515549" expanded="true" signature="11671:11672" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="236" column="84" selection-start-line="236" selection-start-column="74" selection-end-line="236" selection-end-column="84" />
+            <state relative-caret-position="224">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy/crawler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-53">
+              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpimspider/settings.prod.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="39" selection-start-line="39" selection-end-line="41" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -161,12 +210,14 @@
         <option value="$PROJECT_DIR$/cpimspider/spiders/ddd.js" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/ddd.html" />
         <option value="$PROJECT_DIR$/cpimspider/middlewares.py" />
-        <option value="$PROJECT_DIR$/cpimspider/pipelines.py" />
         <option value="$PROJECT_DIR$/cpimspider/RFPDupeFilterOwn.py" />
         <option value="$PROJECT_DIR$/cpimspider/dupefilter.py" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/test.py" />
-        <option value="$PROJECT_DIR$/cpimspider/settings.py" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" />
+        <option value="$PROJECT_DIR$/cpimspider/settings.py.prod.py" />
+        <option value="$PROJECT_DIR$/cpimspider/settings.prod.py" />
+        <option value="$PROJECT_DIR$/cpimspider/pipelines.py" />
+        <option value="$PROJECT_DIR$/cpimspider/settings.py" />
       </list>
     </option>
   </component>
@@ -177,7 +228,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
+    <option name="x" value="1795" />
     <option name="y" value="23" />
     <option name="width" value="1594" />
     <option name="height" value="957" />
@@ -238,6 +289,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cpimspider" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cpimspider" />
     </key>
@@ -387,20 +441,34 @@
       <option name="project" value="LOCAL" />
       <updated>1552467795876</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="init">
+      <created>1552534361757</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552534361757</updated>
+    </task>
+    <task id="LOCAL-00008" summary="init">
+      <created>1552547306628</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552547306628</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="23" width="1594" height="957" extended-state="0" />
+    <frame x="1795" y="23" width="1594" height="957" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12371134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17010309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34450868" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.061271675" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.28208092" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38612717" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" visible="true" weight="0.16531792" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -452,6 +520,16 @@
           <url>file:///usr/local/lib/python3.7/site-packages/scrapy_redis/pipelines.py</url>
           <line>66</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.7/site-packages/scrapy/crawler.py</url>
+          <line>170</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.7/site-packages/scrapy/crawler.py</url>
+          <line>174</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -511,25 +589,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.7/site-packages/cssselect/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16720">
-          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/requests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/isort/pie_slice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="216" column="12" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/site-packages/zope/interface/common/mapping.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -645,6 +704,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#77#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -710,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy_redis/defaults.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy_redis/dupefilter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-951">
@@ -748,10 +803,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/dupefilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy_redis/defaults.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/twisted/internet/defer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="1417" selection-start-line="1417" selection-end-line="1417" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <element signature="e#170#196#0" expanded="true" />
+            <marker date="1552451435531" expanded="true" signature="4722:4731" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/scrapy/crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4402">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="672">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#193#206#0" expanded="true" />
             <marker date="1552463515549" expanded="true" signature="2183:2202" ph="..." />
@@ -762,48 +869,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/dupefilter.py">
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="224">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+    <entry file="file://$PROJECT_DIR$/cpimspider/settings.prod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-505">
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#170#196#0" expanded="true" />
-            <marker date="1552451435531" expanded="true" signature="4722:4731" ph="..." />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="39" selection-start-line="39" selection-end-line="41" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="57" column="25" lean-forward="true" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="236" column="84" selection-start-line="236" selection-start-column="74" selection-end-line="236" selection-end-column="84" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="215">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>

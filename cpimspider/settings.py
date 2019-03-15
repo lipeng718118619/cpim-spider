@@ -37,11 +37,12 @@ PROXY_PASS = "1ABA00D60D43BB94"
 # Redis 增量爬取
 REDIS_HOST = '10.211.55.3'
 REDIS_PORT = 6379
+
 # LBS  根据位置获取具体坐标
 LBS_URL = "http://inte-data.chanapp.chanjet.com/api/v1/lbs/getPositionByAddress"
 
 # 企查猫获取联系人接口
-QCH_GET_CONTACT_URL = "https://www.qichamao.com/orgcompany/GetContact"
+QCH_GET_CONTACT_URL = "https://www.ql'sichamao.com/orgcompany/GetContact"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
