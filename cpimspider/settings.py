@@ -56,6 +56,7 @@ end_time = datetime.datetime(now.year, now.month, now.day, 23, 0, 0)
 
 interval = end_time - now
 sec = interval.days * 24 * 3600 + interval.seconds
+# 配置到晚23点停止爬虫
 CLOSESPIDER_TIMEOUT = sec
 
 # Ensure all spiders share same duplicates filter through redis.
