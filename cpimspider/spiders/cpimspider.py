@@ -3,13 +3,14 @@ import base64
 import os
 import time
 import urllib
+import traceback
 
 from PIL import Image
 from scrapy.exceptions import IgnoreRequest
 from scrapy.http import Request, FormRequest
 import socket
 import logging
-
+from urllib.parse import unquote
 from json import loads
 
 from scrapy.utils.project import get_project_settings
@@ -19,6 +20,7 @@ from selenium import webdriver
 from ..items import CpimspiderItem
 
 import uuid
+
 logger = logging.getLogger(__name__)
 settings = get_project_settings()
 
@@ -84,7 +86,7 @@ def verification_code_identification(verify_url):
             return True
         return False
     except Exception as e:
-        logger.error(repr(e))
+        logger.error(traceback.format_exc())
     finally:
         if not driver is None:
             driver.close()
@@ -242,10 +244,12 @@ class CpimSpider(RedisSpider):
             while count <= 5:
                 if verification_code_identification(response.url):
 
-                    url = response.url.split("ReturnUrl=")[1]
-                    logger.info(response.url.split("ReturnUrl=")[1])
+                    url_encode = response.url.split("ReturnUrl=")[1]
+                    # 解码
+                    url_decode = unquote(url_encode, 'utf-8')
+                    logger.info(url_decode)
 
-                    yield Request(url, callback=self.parse, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
+                    yield Request(url_decode, callback=self.parse, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
                                   dont_filter=True)
                     break
                 else:
