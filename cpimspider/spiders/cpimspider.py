@@ -122,7 +122,7 @@ class CpimSpider(RedisSpider):
         # css选取判断是否需要登录  true不需要重新登录  false 需要重新登录
         is_login = False if len(response.css('[data-title=登录]')) > 0 else True
 
-        logger.info("check login return : " + is_login)
+        logger.info("check login return : " + str(is_login))
 
         # 需要重新登录
         if is_login is False:
