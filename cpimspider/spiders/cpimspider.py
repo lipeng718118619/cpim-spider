@@ -164,7 +164,9 @@ class CpimSpider(RedisSpider):
         if response.url.startswith("https://www.qichamao.com/search/all"):
             try:
                 # 非会员只能下载10页
-                is_limit = response.css('article.main').xpath('string(div)').extract_first().strip()
+                is_limit = response.css('article.main').xpath('string(div)').extract_first()
+                if not is_limit is None:
+                    is_limit = is_limit.strip()
                 if is_limit == '企查猫(企业查询宝)偷偷告诉你，开通VIP可查找10000+企业信息':
                     for url in self.start_urls:
                         yield Request(url=url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, headers=self.login_heads,
