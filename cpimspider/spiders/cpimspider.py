@@ -122,6 +122,8 @@ class CpimSpider(RedisSpider):
         # css选取判断是否需要登录  true不需要重新登录  false 需要重新登录
         is_login = False if len(response.css('[data-title=登录]')) > 0 else True
 
+        logger.info("check login return : " + is_login)
+
         # 需要重新登录
         if is_login is False:
             img_url = self.host + response.css('.code-img').attrib['src']
@@ -134,8 +136,10 @@ class CpimSpider(RedisSpider):
     # 登录系统
     def _login(self, response):
         code = verification_code_check(response.body)
+
         self.login_form_data['VerifyCode'] = code
         self.login_form_data['sevenDays'] = 'false'
+        logger.info("login qcm ,code: %s ", code)
         yield FormRequest(url=self.login_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
                           headers=self.login_heads, formdata=self.login_form_data,
                           callback=self._parse_login, dont_filter=True)
