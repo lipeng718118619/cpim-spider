@@ -177,12 +177,15 @@ class CpimSpider(RedisSpider):
                               dont_filter=False)
 
             # 爬起下一个一级页面
+            try:
+                if 'href' in response.css('a.next')[0].attrib:
+                    next_url = response.css('a.next')[0].attrib["href"]
+                else:
+                    next_url = "/search/all/~?o=2"
+            except Exception as e:
+                logger.error(traceback.format_exc())
 
-            if 'href' in response.css('a.next')[0].attrib:
-                next_url = response.css('a.next')[0].attrib["href"]
-            else:
-                next_url = "/search/all/~?o=2"
-
+            logger.info("next first level page %s" % next_url)
             yield Request(self.host + next_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, callback=self.parse,
                           dont_filter=True)
 
