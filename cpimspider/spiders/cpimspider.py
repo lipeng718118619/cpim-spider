@@ -52,16 +52,15 @@ def verification_code_identification(verify_url):
     :param verify_url:
     :return:
     """
-    driver = None
     try:
-        logger.info("verify_code_url : " + verify_url)
+        logger.info("verify_code_url : " + unquote(verify_url, 'utf-8'))
         options = webdriver.ChromeOptions()
         options.headless = True  # 设置启动无界面化
         options.add_argument('window-size=1920,1080')
         driver = webdriver.Chrome(options=options)  # 启动时添加定制的选项
 
         driver.get(verify_url)
-        time.sleep(3)
+        time.sleep(5)
 
         timestamp = str(round(time.time() * 1000))
         code_image_filename = timestamp + ".png"
@@ -77,20 +76,24 @@ def verification_code_identification(verify_url):
         os.remove(code_image_filename)
         code = verification_code_check(code_image_bytes)
 
+        logger.info("verify_code: " + code)
+
         driver.find_element_by_id("verifycode").send_keys(code)
 
         driver.find_element_by_class_name("btnverify").click()
-        time.sleep(2)
+        time.sleep(5)
 
         if driver.title != '用户验证-企查猫(企业查询宝)':
+            logger.info("verify_code return true")
             return True
+
+        logger.info("verify_code return false")
         return False
     except Exception as e:
         logger.error(traceback.format_exc())
     finally:
-        if not driver is None:
-            driver.close()
-            driver.quit()
+        driver.close()
+        driver.quit()
 
 
 class CpimSpider(RedisSpider):
@@ -247,7 +250,7 @@ class CpimSpider(RedisSpider):
                     url_encode = response.url.split("ReturnUrl=")[1]
                     # 解码
                     url_decode = unquote(url_encode, 'utf-8')
-                    logger.info(url_decode)
+                    logger.info("ReturnUrl= " + url_decode)
 
                     yield Request(url_decode, callback=self.parse, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
                                   dont_filter=True)
