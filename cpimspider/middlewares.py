@@ -115,11 +115,12 @@ class CpimspiderDownloaderMiddleware(object):
         """
         需要重定向,验证码识别
         """
+        logger.info("redirect_urls :" + str(request.meta['redirect_urls']))
+
         # 原url
         url = request.meta['redirect_urls'][0]
         # 重定向url
         verify_url = request.meta['redirect_urls'][1]
-        logger.info("redirect_urls :" + str(request.meta['redirect_urls']))
 
         """
         进行验证码验证
