@@ -136,10 +136,10 @@ class CpimSpider(RedisSpider):
                     next_url = response.css('a.next')[0].attrib["href"]
                 else:
                     next_url = "/search/all/~?o=2"
+                    logger.info("next first level page %s" % next_url)
             except Exception as e:
                 logger.error(traceback.format_exc())
 
-            logger.info("next first level page %s" % next_url)
             yield Request(self.host + next_url, meta={COOKIE_JAR: response.meta[COOKIE_JAR]}, callback=self.parse,
                           dont_filter=True)
 
