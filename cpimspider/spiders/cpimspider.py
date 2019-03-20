@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import base64
-import os
+
 import time
 import urllib
 import traceback
 
-from PIL import Image
 from scrapy.exceptions import IgnoreRequest
 from scrapy.http import Request, FormRequest
 import socket
@@ -15,7 +14,6 @@ from json import loads
 
 from scrapy.utils.project import get_project_settings
 from scrapy_redis.spiders import RedisSpider
-from selenium import webdriver
 
 from ..items import CpimspiderItem
 
@@ -44,56 +42,6 @@ def verification_code_check(img_content):
     dat = s.recv(1024)
     s.close()
     return dat.decode()
-
-
-def verification_code_identification(verify_url):
-    """
-    用于跳过企查猫验证码
-    :param verify_url:
-    :return:
-    """
-    try:
-        logger.info("verify_code_url : " + unquote(verify_url, 'utf-8'))
-        options = webdriver.ChromeOptions()
-        options.headless = True  # 设置启动无界面化
-        options.add_argument('window-size=1920,1080')
-        driver = webdriver.Chrome(options=options)  # 启动时添加定制的选项
-
-        driver.get(verify_url)
-        time.sleep(5)
-
-        timestamp = str(round(time.time() * 1000))
-        code_image_filename = timestamp + ".png"
-        driver.find_element_by_class_name("code-img").screenshot(code_image_filename)
-        # 调整图片大小
-        image = Image.open(code_image_filename)
-        resize_image = image.resize((80, 35), Image.ANTIALIAS)
-        resize_image.save(code_image_filename)
-
-        with open(code_image_filename, 'rb') as f:
-            code_image_bytes = f.read()
-
-        os.remove(code_image_filename)
-        code = verification_code_check(code_image_bytes)
-
-        logger.info("verify_code: " + code)
-
-        driver.find_element_by_id("verifycode").send_keys(code)
-
-        driver.find_element_by_class_name("btnverify").click()
-        time.sleep(5)
-
-        if driver.title != '用户验证-企查猫(企业查询宝)':
-            logger.info("verify_code return true")
-            return True
-
-        logger.info("verify_code return false")
-        return False
-    except Exception as e:
-        logger.error(traceback.format_exc())
-    finally:
-        driver.close()
-        driver.quit()
 
 
 class CpimSpider(RedisSpider):
@@ -247,25 +195,6 @@ class CpimSpider(RedisSpider):
 
             CpimSpider.set_contact_item(response, base_info)
             yield base_info
-
-        elif response.url.startswith("https://www.qichamao.com/userCenter/UserVarify"):
-            """
-            进行验证码验证
-            """
-            count = 0
-            while count <= 5:
-                if verification_code_identification(response.url):
-
-                    url_encode = response.url.split("ReturnUrl=")[1]
-                    # 解码
-                    url_decode = unquote(url_encode, 'utf-8')
-                    logger.info("ReturnUrl= " + url_decode)
-
-                    yield Request(url_decode, callback=self.parse, meta={COOKIE_JAR: response.meta[COOKIE_JAR]},
-                                  dont_filter=True)
-                    break
-                else:
-                    count = count + 1
 
     # 处理联系信息
     @staticmethod

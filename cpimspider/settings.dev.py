@@ -14,18 +14,18 @@ BOT_NAME = 'cpim_spider'
 
 # LOG CONFIG
 LOG_LEVEL = 'INFO'
-LOG_FILE = "/data/data_center/log/mySpider.log"
+LOG_FILE = "/Users/honddy/PycharmProjects/log/mySpider.log"
 SPIDER_MODULES = ['cpimspider.spiders']
 
 # DataBase Config
-DB_HOST = 'proddsorg56.mysql.rds.aliyuncs.com'
+DB_USER = 'root'
+DB_PASSWORD = 'root'
+DB_HOST = '10.211.55.3'
 DB_PORT = 3306
-DB_USER = 'data_chanjet'
-DB_PASSWORD = 'data_chanjet^257'
-DB_NAME = 'corp_data'
+DB_NAME = 'test'
 
 # 验证码服务器
-VERIFICATION_CODE_SERVER_HOST = '172.16.34.41'
+VERIFICATION_CODE_SERVER_HOST = '10.211.55.6'
 VERIFICATION_CODE_SERVER_PORT = 80
 
 # 代理服务器
@@ -35,11 +35,9 @@ PROXY_USER = "HC2322Y33549552D"
 PROXY_PASS = "1ABA00D60D43BB94"
 
 # Redis 增量爬取
-REDIS_HOST = 'proddsorg.redis.rds.aliyuncs.com'
+REDIS_HOST = '10.211.55.3'
 REDIS_PORT = 6379
-REDIS_PARAMS = {
-    'password': 'Dsorg2018'
-}
+
 # LBS  根据位置获取具体坐标
 LBS_URL = "http://inte-data.chanapp.chanjet.com/api/v1/lbs/getPositionByAddress"
 
@@ -129,14 +127,14 @@ REDIS_ENCODING = 'latin1'
 
 # Ensure all spiders share same duplicates filter through redis.
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS = 10
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 6
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 6
+CONCURRENT_REQUESTS_PER_DOMAIN = 10
 # CONCURRENT_REQUESTS_PER_IP = 10
 
 # Disable cookies (enabled by default)
@@ -160,8 +158,8 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'cpimspider.middlewares.CpimspiderDownloaderMiddleware': 543,
     'cpimspider.middlewares.CpimUserAgentMiddleware': 200,
+    'cpimspider.middlewares.CpimspiderDownloaderMiddleware': 300,
     'cpimspider.middlewares.RandomHttpProxyMiddleware': 2000
 }
 

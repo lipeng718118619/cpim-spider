@@ -92,7 +92,6 @@ SCHEDULER_PERSIST = True
 
 # Store scraped item in redis for post-processing.
 ITEM_PIPELINES = {
-    # 'scrapy_redis.pipelines.RedisPipeline': 300,
     'cpimspider.pipelines.RedisPipelineOwn': 300,
     'cpimspider.pipelines.LBSDataPipeline': 350,
     'cpimspider.pipelines.QCMGetCropContactPipeline': 400,
@@ -129,7 +128,7 @@ REDIS_ENCODING = 'latin1'
 
 # Ensure all spiders share same duplicates filter through redis.
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS = 8
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -160,8 +159,8 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'cpimspider.middlewares.CpimspiderDownloaderMiddleware': 543,
     'cpimspider.middlewares.CpimUserAgentMiddleware': 200,
+    'cpimspider.middlewares.CpimspiderDownloaderMiddleware': 300,
     'cpimspider.middlewares.RandomHttpProxyMiddleware': 2000
 }
 

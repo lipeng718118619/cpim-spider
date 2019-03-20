@@ -5,6 +5,10 @@ from scrapy_redis.dupefilter import RFPDupeFilter
 
 
 class RFPDupeFilterOwn(RFPDupeFilter):
+    """
+    去重策略,去重键只保存前一天与当天的
+
+    """
 
     def __init__(self, server, key, debug=False):
         self.start_time = time.strftime("%Y%m%d", time.localtime())
