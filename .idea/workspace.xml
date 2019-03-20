@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bb9d39c-58ab-4a49-8344-fd298a76c474" name="Default Changelist" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="3bb9d39c-58ab-4a49-8344-fd298a76c474" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpimspider/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/cpimspider/middlewares.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cpimspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1540788959409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
     <SUITE FILE_PATH="coverage/cpimspider$start.coverage" NAME="start Coverage Results" MODIFIED="1553060043982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
-    <SUITE FILE_PATH="coverage/cpimspider$test.coverage" NAME="test Coverage Results" MODIFIED="1552890245355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
+    <SUITE FILE_PATH="coverage/cpimspider$test.coverage" NAME="test Coverage Results" MODIFIED="1553062881142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
     <SUITE FILE_PATH="coverage/cpimspider$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1540802644988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider" />
     <SUITE FILE_PATH="coverage/cpimspider$cpimspider.coverage" NAME="cpimspider Coverage Results" MODIFIED="1552459123876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cpimspider/spiders" />
   </component>
@@ -44,7 +43,7 @@
           <entry key="log" value="17" />
           <entry key="md" value="2" />
           <entry key="png" value="21" />
-          <entry key="py" value="544" />
+          <entry key="py" value="553" />
           <entry key="py1" value="2" />
           <entry key="pyi" value="1" />
           <entry key="sh" value="6" />
@@ -59,7 +58,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="544" />
+          <entry key="Python" value="553" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
@@ -68,16 +67,16 @@
           <entry key="dummy" value="36" />
           <entry key="html" value="9" />
           <entry key="js" value="10" />
-          <entry key="py" value="16644" />
-          <entry key="txt" value="28" />
+          <entry key="py" value="16700" />
+          <entry key="txt" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="9" />
           <entry key="JavaScript" value="10" />
-          <entry key="PLAIN_TEXT" value="64" />
-          <entry key="Python" value="16627" />
+          <entry key="PLAIN_TEXT" value="77" />
+          <entry key="Python" value="16683" />
           <entry key="SQL" value="17" />
         </counts>
       </usages-collector>
@@ -85,22 +84,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="138" column="70" lean-forward="true" selection-start-line="138" selection-start-column="70" selection-end-line="138" selection-end-column="70" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpimspider/settings.dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
+            <state relative-caret-position="771">
               <caret line="159" selection-start-line="159" selection-end-line="163" selection-end-column="1" />
             </state>
           </provider>
@@ -109,8 +96,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="-1325">
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+              <folding>
+                <element signature="e#168#179#0" expanded="true" />
+                <marker date="1553062985192" expanded="true" signature="2240:2242" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,12 +178,12 @@
         <option value="$PROJECT_DIR$/cpimspider/settings.py.prod.py" />
         <option value="$PROJECT_DIR$/cpimspider/pipelines.py" />
         <option value="$PROJECT_DIR$/cpimspider/settings.prod.py" />
-        <option value="$PROJECT_DIR$/cpimspider/spiders/test.py" />
         <option value="$PROJECT_DIR$/cpimspider/dupefilter.py" />
         <option value="$PROJECT_DIR$/cpimspider/settings.py" />
-        <option value="$PROJECT_DIR$/cpimspider/middlewares.py" />
         <option value="$PROJECT_DIR$/cpimspider/settings1.py" />
         <option value="$PROJECT_DIR$/cpimspider/spiders/cpimspider.py" />
+        <option value="$PROJECT_DIR$/cpimspider/spiders/test.py" />
+        <option value="$PROJECT_DIR$/cpimspider/middlewares.py" />
       </list>
     </option>
   </component>
@@ -274,7 +274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.start">
     <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cpimspider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -297,8 +297,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cpimspider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cpimspider/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cpimspider/spiders/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.start" />
+      <item itemvalue="Python.test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.start" />
       </list>
     </recent_temporary>
@@ -454,19 +481,33 @@
       <option name="project" value="LOCAL" />
       <updated>1553060562811</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="1`111">
+      <created>1553060741088</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1553060741088</updated>
+    </task>
+    <task id="LOCAL-00022" summary="init">
+      <created>1553061509547</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1553061509547</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="23" width="1594" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16108248" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17847939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3263889" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.13773148" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13773148" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.3159722" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,9 +573,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改爬虫时间" />
     <MESSAGE value="修改下载延迟" />
-    <MESSAGE value="init" />
     <MESSAGE value="解决 验证码 验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决 验证码 验证" />
+    <MESSAGE value="1`111" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -775,15 +817,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/test.py" />
     <entry file="file://$USER_HOME$/.Trash/1552891293677.png" />
-    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/spiders/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -835,37 +869,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+    <entry file="file://$PROJECT_DIR$/cpimspider/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="138" column="97" selection-start-line="138" selection-start-column="93" selection-end-line="138" selection-end-column="97" />
+        <state relative-caret-position="54">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="996">
+          <caret line="142" column="30" selection-start-line="142" selection-end-line="143" />
           <folding>
-            <element signature="e#168#179#0" expanded="true" />
-            <marker date="1553060043975" expanded="true" signature="2240:2242" ph="..." />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/settings.dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
+        <state relative-caret-position="771">
           <caret line="159" selection-start-line="159" selection-end-line="163" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpimspider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="-1325">
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/cpimspider.py">
+    <entry file="file://$PROJECT_DIR$/cpimspider/spiders/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="138" column="70" lean-forward="true" selection-start-line="138" selection-start-column="70" selection-end-line="138" selection-end-column="70" />
+        <state relative-caret-position="27">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpimspider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
           <folding>
-            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#168#179#0" expanded="true" />
+            <marker date="1553062985192" expanded="true" signature="2240:2242" ph="..." />
           </folding>
         </state>
       </provider>

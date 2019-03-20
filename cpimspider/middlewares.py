@@ -106,8 +106,8 @@ class CpimspiderDownloaderMiddleware(object):
         # - return a Response object
         # - return a Request object
         # - or raise IgnoreRequest
-        logger.debug("request url : " + request.url)
-        logger.debug("response code : %s , url : %s", response.status, response.url)
+        logger.info("request url : " + request.url)
+        logger.info("response code : %s , url : %s", response.status, response.url)
 
         if "redirect_urls" not in request.meta or not request.meta['redirect_urls']:
             return response
@@ -119,8 +119,11 @@ class CpimspiderDownloaderMiddleware(object):
 
         # 原url
         url = request.meta['redirect_urls'][0]
-        # 重定向url
-        verify_url = request.meta['redirect_urls'][1]
+        if len(request.meta['redirect_urls']) == 2:
+            # 重定向url
+            verify_url = request.meta['redirect_urls'][1]
+        else:
+            verify_url = response.url
 
         """
         进行验证码验证
@@ -131,10 +134,6 @@ class CpimspiderDownloaderMiddleware(object):
                 """
                 验证码验证成功
                 """
-                #
-                # url_encode = response.url.split("ReturnUrl=")[1]
-                # # 解码
-                # url_decode = unquote(url_encode, 'utf-8')
                 logger.info("ReturnUrl= " + url)
 
                 return Request(url, meta={COOKIE_JAR: request.meta[COOKIE_JAR]}, dont_filter=True)
