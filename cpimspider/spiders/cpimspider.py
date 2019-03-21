@@ -34,11 +34,9 @@ def verification_code_check(img_content):
     :param img_content:
     :return:
     """
-    content = base64.b64encode(img_content).decode()
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((verification_code_server_host, verification_code_server_port))
-    data = urllib.parse.quote_plus(content).encode()
-    s.sendall(data)
+    s.send(img_content)
     dat = s.recv(1024)
     s.close()
     return dat.decode()
