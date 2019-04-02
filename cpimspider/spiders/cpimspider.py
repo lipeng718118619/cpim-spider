@@ -130,11 +130,12 @@ class CpimSpider(RedisSpider):
 
             # 爬起下一个一级页面
             try:
-                if 'href' in response.css('a.next')[0].attrib:
+                if response.css('a.next') and 'href' in response.css('a.next')[0].attrib:
                     next_url = response.css('a.next')[0].attrib["href"]
                 else:
                     next_url = "/search/all/~?o=2"
                     logger.info("next first level page %s" % next_url)
+
             except Exception as e:
                 logger.error(traceback.format_exc())
 
