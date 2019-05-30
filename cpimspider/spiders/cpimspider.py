@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
-import base64
 
 import time
-import urllib
 import traceback
 
 from scrapy.exceptions import IgnoreRequest
 from scrapy.http import Request, FormRequest
 import socket
 import logging
-from urllib.parse import unquote
 from json import loads
-
 from scrapy.utils.project import get_project_settings
 from scrapy_redis.spiders import RedisSpider
 

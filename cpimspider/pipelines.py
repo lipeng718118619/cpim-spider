@@ -123,7 +123,7 @@ class SaveDataPipeline(object):
         password = settings.get("DB_PASSWORD")
 
         self._pool = PooledDB(pymysql, 10, 60, database=db_name, host=host, port=port, user=user,
-                              password=password)
+                              password=password, charset="utf8")
 
         self._insert_corp_info_sql = """insert into stg_corp_info(`id`, 
                                `org_name`, `org_code`, `org_type`, `address`, `tyshxydm`, `nsrsbh`, `reg_number`, 

@@ -41,7 +41,7 @@ REDIS_PARAMS = {
     'password': 'Dsorg2018'
 }
 # LBS  根据位置获取具体坐标
-LBS_URL = "http://inte-data.chanapp.chanjet.com/api/v1/lbs/getPositionByAddress"
+LBS_URL = "http://inte-data.chanapp.chanjet.com/api/v1/lbs/getPositionByAddress/"
 
 # 企查猫获取联系人接口
 QCH_GET_CONTACT_URL = "https://www.qichamao.com/orgcompany/GetContact"
@@ -124,7 +124,7 @@ ITEM_PIPELINES = {
 # REDIS_START_URLS_KEY = '%(name)s:start_urls'
 
 # Use other encoding than utf-8 for redis.
-REDIS_ENCODING = 'latin1'
+# REDIS_ENCODING = 'latin1'
 
 # Ensure all spiders share same duplicates filter through redis.
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -168,9 +168,9 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
 EXT_ENABLED = True
 IDLE_NUMBER = 120  # 配置空闲持续时间单位为 120 个 ，一个时间单位为5s
-EXTENSIONS = {
-    'cpimspider.extensions.RedisSpiderSmartIdleClosedExtensions': 500,
-}
+# EXTENSIONS = {
+#     'cpimspider.extensions.RedisSpiderSmartIdleClosedExtensions': 500,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
