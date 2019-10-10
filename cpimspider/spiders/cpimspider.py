@@ -116,7 +116,7 @@ class CpimSpider(RedisSpider):
             except Exception:
                 raise IgnoreRequest
 
-            logger.info("first level page %s" % response.url)
+                logger.info("first level page %s" % response.url)
             urls = (orgAttr.attrib['href'] for orgAttr in response.css('.listsec_box.clf').css('.listsec_tit'))
 
             for url in urls:
